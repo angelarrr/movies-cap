@@ -1,8 +1,8 @@
 'use strict';
 
-var movies = angular.module('movieApp', ['ngRoute'])
+angular.module('movieApp', ['ngRoute', 'movServices', 'movControllers']).
 
-movies.config(['$routeProvider', function($routeProvider){
+config(['$routeProvider', function($routeProvider){
 	$routeProvider.when('/', {
 		templateUrl : './views/home.html',
 	}).when('/movieslist', {
