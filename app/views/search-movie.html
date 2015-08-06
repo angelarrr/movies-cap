@@ -1,0 +1,25 @@
+<div class="text-center">
+	<h2>Search for movies</h2>
+	
+	<form name="searchForm" novalidate ng-submit="submit()">
+		<input type="text" name="query" placeholder="search" ng-model="query" required /><input type="submit" />
+	
+		<div>
+			<span class="error" ng-if="searchForm.$submitted && searchForm.query.$error.required">Please enter a movie title above!</span>
+		</div>
+	</form>
+</div>
+
+<div class="text-center">
+	{{searchResultsMsg}}
+</div>
+
+<div class="layout">
+	<div ng-repeat="movie in movies">
+		<div class="thumbnail">
+			<h4 class="caption"><a href="{{movie.links.alternate}}" target="_blank">{{ movie.title }}</a></h4>
+			<img width="80px" ng-src="{{movie.posters.detailed}}" alt="{{movie.title}}">
+			<p>{{ movie.synopsis }}</p>
+		</div>
+	</div>
+</div>

@@ -8,6 +8,9 @@ config(['$routeProvider', function($routeProvider){
 	}).when('/movieslist', {
 		templateUrl : './views/movies-list.html',
 		controller : 'moviesListCtrl',
+	}).when('/search', {
+		templateUrl : './views/search-movie.html',
+		controller : 'searchCtrl'
 	}).otherwise({
 		redirectTo: '/'
 	});

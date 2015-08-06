@@ -3,9 +3,13 @@
 angular.module('movServices', [])
 	.value('version', '1.0')
 
-	.constant('API_KEY', 'vnava55vpau5rvt85b46vgzg')
+	.constant('API_CONFIG', {
+		BASE: 'http://api.rottentomatoes.com/api/public/v1.0/',
+		KEY: 'vnava55vpau5rvt85b46vgzg',
+		CALLBACK: 'JSON_CALLBACK'
+	})
 
-	.factory('appFactory', ['$http', 'API_KEY', function($http, API_KEY){
+	.factory('appFactory', ['$http', 'API_CONFIG', function($http, API_CONFIG){
 		var countries = [
 			{ name: 'USA', code: 'US' },
 			{ name: 'South Korea', code: 'KR'},
@@ -18,13 +22,15 @@ angular.module('movServices', [])
 				return countries;
 			},
 
-			getBoxOffice: function(){
-				var countryCode = '';
-				return $http.jsonp('http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?limit=20&country='+ countryCode +'&callback=JSON_CALLBACK&apikey='+ API_KEY);
+			getBoxOffice: function(countryCode){
+				return $http.jsonp(API_CONFIG.BASE+'lists/movies/box_office.json?limit=20&country='+ countryCode +'&callback='+API_CONFIG.CALLBACK+'&apikey='+ API_CONFIG.KEY);
+			},
+
+			searchMovie: function(query){
+				return $http.jsonp(API_CONFIG.BASE+'movies.json?q='+ encodeURI(query) + '&callback='+API_CONFIG.CALLBACK+'&page_limit=20&apikey='+API_CONFIG.KEY);
 			}
 		};
 	}])
-
 // api key: hnk4j9zjqxj278dtcragxmdm (waiting for approval)
 
 // use random api key found online for now: vnava55vpau5rvt85b46vgzg
