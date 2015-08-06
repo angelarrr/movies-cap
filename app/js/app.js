@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('movieApp', ['ngRoute', 'movServices', 'movControllers']).
+angular.module('movieApp', ['ngRoute', 'ngAnimate', 'movServices', 'movControllers']).
 
 config(['$routeProvider', function($routeProvider){
 	$routeProvider.when('/', {
