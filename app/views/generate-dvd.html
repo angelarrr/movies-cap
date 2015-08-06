@@ -1,7 +1,9 @@
-<div class="text-center">
-	<p>Click button below to generate a random movie that is now available on DVD to watch!</p>
+<div class="dvd-instruct">
+	<div class="text-center">
+		<h4>Click button below to generate a random movie that is now available on DVD to watch!</h4>
 	
-	<button ng-click="generateDvd()">Generate</button>
+		<button ng-click="generateDvd()">Generate</button>
+	</div>
 </div>
 
 <div class="dvd-layout">
@@ -9,6 +11,7 @@
 		<div class="thumbnail">
 			<h4 class="caption"><a href="{{dvd.links.alternate}}" target="_blank">{{ dvd.title }}</a></h4>		
 			<img width="55px" ng-src="{{dvd.posters.detailed}}" alt="{{dvd.title}}">
+			<p><strong>Audience Score:</strong> {{ dvd.ratings.audience_score }}</p>
 			<p>{{ dvd.synopsis }}</p>
 		</div>
 	</div>

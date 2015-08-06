@@ -14,7 +14,9 @@ angular.module('movServices', [])
 			{ name: 'USA', code: 'US' },
 			{ name: 'South Korea', code: 'KR'},
 			{ name: 'Australia', code: 'AU'},
-			{ name: 'South Africa', code: 'ZA'}
+			{ name: 'South Africa', code: 'ZA'},
+			{ name: 'France', code: 'FR' },
+			{ name: 'Hong Kong', code: 'HK' }
 		];
 
 		return {

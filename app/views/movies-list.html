@@ -1,12 +1,13 @@
 <h3 class="text-center">Top Box Office Movies around the World</h3>
 
-<p>Select country: <button class="btn btn-info" ng-click="loadBoxOffice(country.code)" ng-repeat="country in countries">{{ country.name }} </button></p>
+<p>Select country: <button class="btn btn-info" ng-click="loadBoxOffice(country.code)" ng-repeat="country in countries | orderBy: 'name'">{{ country.name }} </button></p>
 
 <div class="layout">
 	<div ng-repeat="boxmovie in boxmovies">
 		<div class="thumbnail">
 			<h4 class="caption"><a href="{{boxmovie.links.alternate}}" target="_blank">{{ boxmovie.title }}</a></h4>
 			<img width="55px" ng-src="{{boxmovie.posters.detailed}}" alt="{{boxmovie.title}}">
+			<p><strong>Audience Score:</strong> {{ boxmovie.ratings.audience_score }}</p>
 			<p>{{ boxmovie.synopsis }}</p>
 		</div>
 	</div>
