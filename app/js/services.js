@@ -15,7 +15,6 @@ angular.module('movServices', [])
 			{ name: 'South Korea', code: 'KR'},
 			{ name: 'Australia', code: 'AU'},
 			{ name: 'South Africa', code: 'ZA'},
-			{ name: 'France', code: 'FR' },
 			{ name: 'Hong Kong', code: 'HK' }
 		];
 
@@ -38,5 +37,4 @@ angular.module('movServices', [])
 		};
 	}])
 // api key: hnk4j9zjqxj278dtcragxmdm (waiting for approval)
-
 // use random api key found online for now: vnava55vpau5rvt85b46vgzg
