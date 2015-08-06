@@ -1,0 +1,15 @@
+<div class="text-center">
+	<p>Click button below to generate a random movie that is now available on DVD to watch!</p>
+	
+	<button ng-click="generateDvd()">Generate</button>
+</div>
+
+<div class="dvd-layout">
+	<div ng-repeat="dvd in dvds">
+		<div class="thumbnail">
+			<h4 class="caption"><a href="{{dvd.links.alternate}}" target="_blank">{{ dvd.title }}</a></h4>		
+			<img width="55px" ng-src="{{dvd.posters.detailed}}" alt="{{dvd.title}}">
+			<p>{{ dvd.synopsis }}</p>
+		</div>
+	</div>
+</div>

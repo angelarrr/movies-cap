@@ -11,6 +11,9 @@ config(['$routeProvider', function($routeProvider){
 	}).when('/search', {
 		templateUrl : './views/search-movie.html',
 		controller : 'searchCtrl'
+	}).when('/generate', {
+		templateUrl : './views/generate-dvd.html',
+		controller : 'generateCtrl'
 	}).otherwise({
 		redirectTo: '/'
 	});

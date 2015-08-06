@@ -9,13 +9,14 @@
 <body>
 	<div class="container">
 		<div class="text-center">
-			<h1><a href="#/">Angular Movie App</a></h1>
+			<h1>Angular Movie App</h1>
 		</div>
 
-		<ul class="nav nav-tabs">
-  			<li role="presentation" class="active"><a href="#/">Home</a></li>
-  			<li role="presentation"><a href="#/movieslist">Top Box Office</a></li>
+		<ul class="nav nav-pills">
+  			<li role="presentation"><a href="#/">Home</a></li>
   			<li role="presentation"><a href="#/search">Search Movies</a></li>
+  			<li role="presentation"><a href="#/generate">Random DVD</a></li>
+  			<li role="presentation"><a href="#/movieslist">Top Box Office</a></li>
 		</ul>
 
 		<div ng-view></div>
@@ -26,6 +27,5 @@
 	<script src="js/app.js"></script>
 	<script src="js/services.js"></script>
 	<script src="js/controllers.js"></script>
-	<script src="js/filters.js"></script>
 </body>
 </html>

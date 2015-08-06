@@ -1,15 +1,25 @@
 .layout {
 	column-count: 4;
-	column-gap: 0px;
+	column-gap: 1em;
 	-moz-column-count: 4;
-	-moz-column-gap: 0px;
+	-moz-column-gap: 1em;
 	-webkit-column-count: 4;
-	-webkit-column-gap: 0px;
+	-webkit-column-gap: 1em;
+	margin-top: 2em;
+}
+
+.dvd-layout {
+	column-count: 1;
+	-moz-column-count: 1;
+	-webkit-column-count: 1;
+	width: 25%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .thumbnail {
 	display: inline-block;
-	margin: 1em;
+	width: 90%;
 }
 
 .thumbnail img {
@@ -18,4 +28,8 @@
 
 input[type=text] {
 	width: 40%;
+}
+
+.dvd-layout div {
+	margin-top: 1em;
 }

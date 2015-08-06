@@ -28,6 +28,10 @@ angular.module('movServices', [])
 
 			searchMovie: function(query){
 				return $http.jsonp(API_CONFIG.BASE+'movies.json?q='+ encodeURI(query) + '&callback='+API_CONFIG.CALLBACK+'&page_limit=20&apikey='+API_CONFIG.KEY);
+			},
+
+			getDvd: function(){
+				return $http.jsonp(API_CONFIG.BASE+'lists/dvds/current_releases.json?page_limit=50&callback='+API_CONFIG.CALLBACK+'&apikey='+API_CONFIG.KEY);
 			}
 		};
 	}])

@@ -18,19 +18,20 @@ angular.module('movControllers', [])
 		$scope.loadBoxOffice('US');
 	}])
 
-	.controller('searchCtrl', ['$scope', '$http', '$q', '$timeout', 'appFactory',function($scope, $http, $q, $timeout, appFactory){
+	.controller('searchCtrl', ['$scope', '$http', '$q', '$timeout', 'appFactory', function($scope, $http, $q, $timeout, appFactory){
 
-			// create promise for 2 second message
+		// create promise for 2 second message
 		function wait() {
 			var defer = $q.defer();
 			// Simulating doing some asynchronous operation...
 			setTimeout(function() {
 				defer.resolve();
-			}, 2000);
+			}, 4000);
 
 			return defer.promise;
 		};
 
+		// search result message
 		function searchResults() {
 			$scope.searchResultsMsg = "Searching Rotten Tomatoes for " + $scope.query + "...";
 			return wait().then(function() {
@@ -38,6 +39,7 @@ angular.module('movControllers', [])
 			});
 		};
 
+		// submit function on search
 		$scope.submit = function(){
 			if($scope.searchForm.$valid) {
 
@@ -46,14 +48,30 @@ angular.module('movControllers', [])
 						var searchMovies = response.data.movies;
 						$scope.movies = searchMovies;
 
-						if (response.data.total === 0 ) {
+						if ($scope.movies.length === 0 ) {
 							$scope.searchResultsMsg = 'No movies matching ' + $scope.query +' were found.';
+						} else if ($scope.movies.length > 0) {
+							$scope.searchResultsMsg = 'We found ' + $scope.movies.length + ' results for ' + $scope.query + '.';
 						} else {
-							$scope.searchResultsMsg = 'We found ' + response.data.total + ' results ' + $scope.query + '. Only 20 are shown below.';
+							$scope.searchResultsMsg = 'Something went wrong! Please try again.';
 						}
 
 					});
 				});
 			}
+		};
+	}])
+
+	.controller('generateCtrl', ['$scope', 'appFactory', function($scope, appFactory){
+
+		$scope.generateDvd = function(){
+			appFactory.getDvd().then(function(response){
+				var random = response.data.movies;
+				$scope.dvds = [];
+
+				var num = Math.floor(Math.random() * random.length);
+				console.log(num);
+				$scope.dvds.push(random[num]);
+			})
 		};
 	}])
