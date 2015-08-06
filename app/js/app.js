@@ -12,5 +12,3 @@ config(['$routeProvider', function($routeProvider){
 		redirectTo: '/'
 	});
 }])
-
-// api key: hnk4j9zjqxj278dtcragxmdm (waiting for approval)
