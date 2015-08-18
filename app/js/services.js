@@ -33,6 +33,10 @@ angular.module('movServices', [])
 
 			getDvd: function(){
 				return $http.jsonp(API_CONFIG.BASE+'lists/dvds/current_releases.json?page_limit=50&callback='+API_CONFIG.CALLBACK+'&apikey='+API_CONFIG.KEY);
+			},
+
+			getDetails: function(id){
+				return $http.jsonp(API_CONFIG.BASE+'movies/'+id+'.json?apikey='+API_CONFIG.KEY)
 			}
 		};
 	}])
