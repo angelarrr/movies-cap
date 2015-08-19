@@ -58,3 +58,20 @@ input[type=text] {
 .dvd-instruct h4 {
 	margin-bottom: 2em;
 }
+
+.animate {
+	transition: all 2s ease-in;
+}
+
+.ng-enter.animate {
+	opacity: 0;
+}
+
+.ng-enter.ng-enter-active.animate {
+	opacity: 1;
+}
+
+.ng-enter-stagger.animate {
+	-webkit-transition-delay: 2s;
+	transition-delay: 2s; 
+}

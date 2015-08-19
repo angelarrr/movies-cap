@@ -15,7 +15,7 @@
 </div>
 
 <div class="layout">
-	<div ng-repeat="movie in movies">
+	<div class="animate" ng-repeat="movie in movies">
 		<div class="thumbnail">
 			<h4 class="caption"><a href="{{movie.links.alternate}}" target="_blank">{{ movie.title }}</a></h4>
 			<img width="55px" ng-src="{{movie.posters.detailed}}" alt="{{movie.title}}">
