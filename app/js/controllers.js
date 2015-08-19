@@ -74,4 +74,4 @@ angular.module('movControllers', [])
 				$scope.dvds.push(random[num]);
 			})
 		};
-	}])
+	}])	

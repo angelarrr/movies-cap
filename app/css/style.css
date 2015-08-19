@@ -1,6 +1,13 @@
+.navbar {
+	margin-bottom: 0;
+	background-color: white;
+	opacity: 0.8;
+}
 
 header {
-	padding: 3em;
+	background: url("../img/banner.png");
+	background-size: cover;
+	height: 30em;
 }
 
 .layout {
