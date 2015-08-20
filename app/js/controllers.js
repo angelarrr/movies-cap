@@ -69,7 +69,11 @@ angular.module('movControllers', [])
 
 	.controller('generateCtrl', ['$scope', 'appFactory', function($scope, appFactory){
 
+		$scope.loading = false;
+
 		$scope.generateDvd = function(){
+			$scope.loading = true;
+
 			appFactory.getDvd().then(function(response){
 				var random = response.data.movies;
 				$scope.dvds = [];
@@ -77,6 +81,8 @@ angular.module('movControllers', [])
 				var num = Math.floor(Math.random() * random.length);
 				console.log(num);
 				$scope.dvds.push(random[num]);
+
+				$scope.loading = false;
 			})
 		};
 	}])	

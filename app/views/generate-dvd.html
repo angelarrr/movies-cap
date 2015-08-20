@@ -3,12 +3,15 @@
 		
 		<h4>Generate a random movie recommendation that is currently released on DVD!</h4>
 	
-		<button class="btn btn-primary" ng-click="generateDvd()">Generate</button>
+		<button class="btn btn-primary" ng-click="generateDvd()">
+			<span data-ng-hide="loading">Generate</span>
+			<span data-ng-show="loading">Generating <i class="fa fa-spinner fa-spin"></i></span>
+		</button>
 	</div>
 </div>
 
 <div class="dvd-layout">
-	<div class="animate" ng-repeat="dvd in dvds">
+	<div ng-repeat="dvd in dvds">
 		<div class="thumbnail">
 			<h4 class="caption"><a href="{{dvd.links.alternate}}" target="_blank">{{ dvd.title }}</a></h4>		
 			<img width="55px" ng-src="{{dvd.posters.detailed}}" alt="{{dvd.title}}">
