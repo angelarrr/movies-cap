@@ -41,7 +41,7 @@
 	</thead>
 
 	<tbody>
-		<tr ng-repeat="movie in movies | orderBy: sortType:sortReverse">
+		<tr class="animate-repeat" ng-repeat="movie in movies | orderBy: sortType:sortReverse">
 			<td><img width="55px" ng-src="{{movie.posters.detailed}}" alt="{{movie.title}}"></td>
 			<td><a href="{{movie.links.alternate}}" target="_blank">{{ movie.title }}</a></td>
 			<td>{{ movie.ratings.audience_score }}</td>

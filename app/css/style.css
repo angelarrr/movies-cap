@@ -8,16 +8,7 @@ header {
 	background: url("../img/banner.png");
 	background-size: cover;
 	height: 30em;
-}
-
-.layout {
-	column-count: 4;
-	column-gap: 1em;
-	-moz-column-count: 4;
-	-moz-column-gap: 1em;
-	-webkit-column-count: 4;
-	-webkit-column-gap: 1em;
-	margin-top: 2em;
+	border-bottom: solid 3px black;
 }
 
 .dvd-layout {
@@ -74,4 +65,31 @@ input[type=text] {
 .ng-enter-stagger.animate {
 	-webkit-transition-delay: 2s;
 	transition-delay: 2s; 
+}
+
+.animate-repeat {
+  line-height:40px;
+  list-style:none;
+  box-sizing:border-box;
+}
+ 
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+ 
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+ 
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:40px;
 }
