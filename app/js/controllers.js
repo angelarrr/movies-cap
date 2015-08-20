@@ -4,7 +4,6 @@ angular.module('movControllers', [])
 
 	.controller('moviesListCtrl', ['$scope', 'appFactory', function($scope, appFactory){
 
-		$scope.sortType = 'name';
 		$scope.sortReverse = false;
 
 		$scope.countries = appFactory.getCountries();
@@ -53,10 +52,13 @@ angular.module('movControllers', [])
 
 						if ($scope.movies.length === 0 ) {
 							$scope.searchResultsMsg = 'No movies matching ' + $scope.query +' were found.';
+							$scope.formSubmitted = false;
 						} else if ($scope.movies.length > 0) {
 							$scope.searchResultsMsg = 'We found ' + $scope.movies.length + ' results for ' + $scope.query + '.';
+							$scope.formSubmitted = true;
 						} else {
 							$scope.searchResultsMsg = 'Something went wrong! Please try again.';
+							$scope.formSubmitted = false;
 						}
 
 					});

@@ -14,13 +14,38 @@
 	{{searchResultsMsg}}
 </div>
 
-<div class="layout">
-	<div class="animate" ng-repeat="movie in movies">
-		<div class="thumbnail">
-			<h4 class="caption"><a href="{{movie.links.alternate}}" target="_blank">{{ movie.title }}</a></h4>
-			<img width="55px" ng-src="{{movie.posters.detailed}}" alt="{{movie.title}}">
-			<p><strong>Audience Score:</strong> {{ movie.ratings.audience_score }}</p>
-			<p>{{ movie.synopsis }}</p>
-		</div>
-	</div>
-</div>
+<br />
+
+<table class="table table-bordered table-striped" ng-show="formSubmitted">
+	<thead>
+		<tr>
+			<td>
+				Poster
+			</td>
+			<td>
+				<a ng-click="sortType='title'; sortReverse=!sortReverse">Movie Name
+					<span ng-show="sortType=='title' && !sortReverse" class="fa fa-caret-down"></span>
+					<span ng-show="sortType=='title' && sortReverse" class="fa fa-caret-up"></span>
+				</a>
+			</td>
+			<td>
+				<a ng-click="sortType = 'ratings.audience_score'; sortReverse = !sortReverse">Audience Score
+					<span ng-show="sortType == 'ratings.audience_score' && !sortReverse" class="fa fa-caret-down"></span>
+					<span ng-show="sortType == 'ratings.audience_score' && sortReverse" class="fa fa-caret-up"></span>
+				</a>
+			</td>
+			<td>
+				Synopsis
+			</td>
+		</tr>
+	</thead>
+
+	<tbody>
+		<tr ng-repeat="movie in movies | orderBy: sortType:sortReverse">
+			<td><img width="55px" ng-src="{{movie.posters.detailed}}" alt="{{movie.title}}"></td>
+			<td><a href="{{movie.links.alternate}}" target="_blank">{{ movie.title }}</a></td>
+			<td>{{ movie.ratings.audience_score }}</td>
+			<td>{{ movie.synopsis }}</td>
+		</tr>
+	</tbody>
+</table>
