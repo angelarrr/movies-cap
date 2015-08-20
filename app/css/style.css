@@ -1,14 +1,17 @@
 .navbar {
 	margin-bottom: 0;
-	background-color: white;
-	opacity: 0.8;
 }
 
 header {
 	background: url("../img/banner.png");
 	background-size: cover;
+	background-position: center center;
 	height: 30em;
 	border-bottom: solid 3px black;
+}
+
+footer {
+	background-color: black;
 }
 
 .dvd-layout {
