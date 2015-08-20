@@ -4,6 +4,9 @@ angular.module('movControllers', [])
 
 	.controller('moviesListCtrl', ['$scope', 'appFactory', function($scope, appFactory){
 
+		$scope.sortType = 'name';
+		$scope.sortReverse = false;
+
 		$scope.countries = appFactory.getCountries();
 
 		$scope.loadBoxOffice = function(countryCode){
